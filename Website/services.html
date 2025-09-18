@@ -1,38 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Samaritan Properties | Services</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="text-slate-800 bg-white">
+<body class="bg-white text-slate-800">
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
-    <nav class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-      <a href="index.html" class="font-bold text-lg">Samaritan Properties</a>
+    <nav class="mx-auto max-w-7xl px-4 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="h-8 w-24 grid place-items-center border rounded-md text-xs font-semibold">LOGO</div>
+        <span class="sr-only">Samaritan Properties</span>
+      </a>
       <div class="hidden md:flex gap-6 text-sm">
         <a href="about.html">About</a>
-        <a href="services.html">Services</a>
+        <a href="services.html" class="font-medium">Services</a>
         <a href="properties.html">Properties</a>
         <a href="contact.html" class="px-3 py-1 rounded-lg bg-black text-white">Contact</a>
       </div>
     </nav>
   </header>
 
-  <section class="max-w-4xl mx-auto px-4 py-16">
+  <main class="mx-auto max-w-7xl px-4 py-16">
     <h1 class="text-4xl font-bold">Services</h1>
-    <ul class="mt-6 space-y-4 text-lg list-disc list-inside">
-      <li>Multi-family acquisitions</li>
-      <li>Shopping centers</li>
-      <li>Development</li>
-      <li>Brokerage</li>
-      <li>Property management</li>
-    </ul>
-  </section>
+    <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="p-6 border rounded-2xl">
+        <h3 class="font-semibold">Multi-family Acquisitions</h3>
+        <p class="mt-2 text-sm">Deal sourcing, underwriting, closing, asset plans.</p>
+      </div>
+      <div class="p-6 border rounded-2xl">
+        <h3 class="font-semibold">Shopping Centers</h3>
+        <p class="mt-2 text-sm">Leasing, repositioning, operational efficiency.</p>
+      </div>
+      <div class="p-6 border rounded-2xl">
+        <h3 class="font-semibold">Development</h3>
+        <p class="mt-2 text-sm">Ground-up, entitlement, project management.</p>
+      </div>
+      <div class="p-6 border rounded-2xl">
+        <h3 class="font-semibold">Brokerage & Property Mgmt</h3>
+        <p class="mt-2 text-sm">Transactions & day-to-day performance.</p>
+      </div>
+    </div>
+  </main>
 
   <footer class="border-t">
-    <div class="max-w-7xl mx-auto px-4 py-8 text-sm">© <span id="y"></span> Samaritan Properties</div>
-    <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+    <div class="mx-auto max-w-7xl px-4 py-8 text-sm">© <span id="y"></span> Samaritan Properties</div>
+    <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
   </footer>
 </body>
 </html>

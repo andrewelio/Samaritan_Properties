@@ -1,40 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Samaritan Properties | Home</title>
+  <meta name="description" content="Commercial real estate investment across the Chicago-land suburbs: multifamily, shopping centers, development, brokerage & property management." />
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>html{scroll-behavior:smooth}</style>
 </head>
-<body class="text-slate-800 bg-white">
+<body class="bg-white text-slate-800">
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
-    <nav class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-      <a href="index.html" class="font-bold text-lg">Samaritan Properties</a>
+    <nav class="mx-auto max-w-7xl px-4 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="h-8 w-24 grid place-items-center border rounded-md text-xs font-semibold">LOGO</div>
+        <span class="sr-only">Samaritan Properties</span>
+      </a>
       <div class="hidden md:flex gap-6 text-sm">
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="properties.html">Properties</a>
+        <a href="about.html" class="hover:opacity-70">About</a>
+        <a href="services.html" class="hover:opacity-70">Services</a>
+        <a href="properties.html" class="hover:opacity-70">Properties</a>
         <a href="contact.html" class="px-3 py-1 rounded-lg bg-black text-white">Contact</a>
       </div>
     </nav>
   </header>
 
   <!-- Hero -->
-  <section class="max-w-7xl mx-auto px-4 py-20 text-center">
-    <h1 class="text-5xl md:text-6xl font-bold">Commercial Real Estate • Chicago-land</h1>
-    <p class="mt-6 max-w-2xl mx-auto text-lg">
-      Multi-family, shopping centers, development, brokerage & property management.
-    </p>
-    <a href="contact.html" class="inline-block mt-8 px-6 py-3 rounded-xl bg-black text-white">Get in Touch</a>
+  <section class="relative">
+    <div class="absolute inset-0">
+      <!-- Replace with your hero image -->
+      <div class="h-full w-full bg-[url('/assets/img/hero.jpg')] bg-cover bg-center"></div>
+      <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 py-24 md:py-36 text-white">
+      <h1 class="text-4xl md:text-6xl font-bold tracking-tight">Commercial Real Estate • Chicago-land</h1>
+      <p class="mt-5 max-w-2xl text-lg">
+        Multi-family, shopping centers, development, brokerage & property management.
+      </p>
+      <div class="mt-8 flex gap-3">
+        <a href="properties.html" class="px-6 py-3 rounded-xl bg-white text-black">View Properties</a>
+        <a href="contact.html" class="px-6 py-3 rounded-xl ring-1 ring-white/70">Work with us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credibility / logos (optional) -->
+  <section class="border-y">
+    <div class="mx-auto max-w-7xl px-4 py-10 grid grid-cols-2 md:grid-cols-5 gap-6 opacity-70">
+      <div class="h-10 bg-slate-100 rounded"></div>
+      <div class="h-10 bg-slate-100 rounded"></div>
+      <div class="h-10 bg-slate-100 rounded"></div>
+      <div class="h-10 bg-slate-100 rounded"></div>
+      <div class="h-10 bg-slate-100 rounded"></div>
+    </div>
+  </section>
+
+  <!-- What we do -->
+  <section class="mx-auto max-w-7xl px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-semibold">What we do</h2>
+    <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="p-6 border rounded-2xl">
+        <h3 class="font-semibold">Multi-family</h3>
+        <p class="mt-2 text-sm">Acquisition, value-add, operations.</p>
+      </div>
+      <div class="p-6 border rounded-2xl">
+        <h3 class="font-semibold">Shopping Centers</h3>
+        <p class="mt-2 text-sm">Stabilization, leasing, repositioning.</p>
+      </div>
+      <div class="p-6 border rounded-2xl">
+        <h3 class="font-semibold">Development</h3>
+        <p class="mt-2 text-sm">Ground-up & re-development.</p>
+      </div>
+      <div class="p-6 border rounded-2xl">
+        <h3 class="font-semibold">Brokerage & PM</h3>
+        <p class="mt-2 text-sm">Transaction advisory & management.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured properties -->
+  <section class="mx-auto max-w-7xl px-4 pb-20">
+    <div class="flex items-end justify-between">
+      <h2 class="text-2xl md:text-3xl font-semibold">Selected work</h2>
+      <a class="text-sm underline" href="properties.html">All properties</a>
+    </div>
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- cards (replace images/text later) -->
+      <article class="border rounded-2xl overflow-hidden hover:shadow-md transition">
+        <div class="h-48 bg-slate-200"></div>
+        <div class="p-4">
+          <h3 class="font-semibold">Silver Court Apartments</h3>
+          <p class="text-sm mt-1">Elgin, IL • 36 Units • Value-add</p>
+        </div>
+      </article>
+      <article class="border rounded-2xl overflow-hidden hover:shadow-md transition">
+        <div class="h-48 bg-slate-200"></div>
+        <div class="p-4">
+          <h3 class="font-semibold">Neighborhood Retail</h3>
+          <p class="text-sm mt-1">Suburban Chicago • 25k SF</p>
+        </div>
+      </article>
+      <article class="border rounded-2xl overflow-hidden hover:shadow-md transition">
+        <div class="h-48 bg-slate-200"></div>
+        <div class="p-4">
+          <h3 class="font-semibold">Outparcel Development</h3>
+          <p class="text-sm mt-1">North Aurora, IL • Ground-up</p>
+        </div>
+      </article>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer class="border-t">
-    <div class="max-w-7xl mx-auto px-4 py-8 text-sm">
+    <div class="mx-auto max-w-7xl px-4 py-8 text-sm">
       © <span id="y"></span> Samaritan Properties • info@samaritan-properties.com
     </div>
-    <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+    <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
   </footer>
 </body>
 </html>

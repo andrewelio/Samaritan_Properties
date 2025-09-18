@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Samaritan Properties | About</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="text-slate-800 bg-white">
-  <!-- Header (same as index) -->
+<body class="bg-white text-slate-800">
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
-    <nav class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-      <a href="index.html" class="font-bold text-lg">Samaritan Properties</a>
+    <nav class="mx-auto max-w-7xl px-4 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="h-8 w-24 grid place-items-center border rounded-md text-xs font-semibold">LOGO</div>
+        <span class="sr-only">Samaritan Properties</span>
+      </a>
       <div class="hidden md:flex gap-6 text-sm">
-        <a href="about.html">About</a>
+        <a href="about.html" class="font-medium">About</a>
         <a href="services.html">Services</a>
         <a href="properties.html">Properties</a>
         <a href="contact.html" class="px-3 py-1 rounded-lg bg-black text-white">Contact</a>
@@ -20,24 +22,40 @@
     </nav>
   </header>
 
-  <!-- About -->
-  <section class="max-w-4xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold">About Us</h1>
-    <p class="mt-6 text-lg">[Paste your current “About Samaritan Properties” content here.]</p>
-  </section>
+  <main class="mx-auto max-w-4xl px-4 py-16 space-y-16">
+    <section>
+      <h1 class="text-4xl font-bold">About Samaritan Properties</h1>
+      <p class="mt-6 text-lg">[Paste your current “About” content here.]</p>
+    </section>
 
-  <!-- Investment Thesis -->
-  <section class="max-w-4xl mx-auto px-4 py-16 border-t">
-    <h2 class="text-3xl font-semibold">Investment Thesis</h2>
-    <p class="mt-6 text-lg">[Paste your “Investment Thesis” content here.]</p>
-  </section>
+    <section class="border-t pt-12" id="investment-thesis">
+      <h2 class="text-3xl font-semibold">Investment Thesis</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-8">
+        <div class="space-y-4">
+          <p>[Paste your “Investment Thesis” paragraphs here.]</p>
+          <ul class="list-disc list-inside text-sm space-y-2">
+            <li>Target markets & asset profiles</li>
+            <li>Underwriting discipline</li>
+            <li>Value-creation playbook</li>
+            <li>Risk management & downside protection</li>
+          </ul>
+        </div>
+        <div class="p-6 border rounded-2xl bg-slate-50">
+          <h3 class="font-semibold">At a glance</h3>
+          <ul class="mt-3 text-sm space-y-2">
+            <li>Preferred cap rates / spread targets</li>
+            <li>Hold period & exit strategies</li>
+            <li>Debt & leverage philosophy</li>
+            <li>Operator advantage</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <!-- Footer -->
   <footer class="border-t">
-    <div class="max-w-7xl mx-auto px-4 py-8 text-sm">
-      © <span id="y"></span> Samaritan Properties
-    </div>
-    <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+    <div class="mx-auto max-w-7xl px-4 py-8 text-sm">© <span id="y"></span> Samaritan Properties</div>
+    <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
   </footer>
 </body>
 </html>
