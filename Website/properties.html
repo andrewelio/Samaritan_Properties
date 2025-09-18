@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Samaritan Properties | Properties</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="text-slate-800 bg-white">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+    <nav class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="index.html" class="font-bold text-lg">Samaritan Properties</a>
+      <div class="hidden md:flex gap-6 text-sm">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="properties.html">Properties</a>
+        <a href="contact.html" class="px-3 py-1 rounded-lg bg-black text-white">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold">Our Properties</h1>
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Example property card -->
+      <article class="border rounded-2xl overflow-hidden shadow-sm">
+        <img src="assets/img/sample.jpg" class="w-full h-48 object-cover" alt="">
+        <div class="p-4">
+          <h2 class="font-semibold">Silver Court Apartments</h2>
+          <p class="text-sm mt-1">Elgin, IL • 36 Units</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="border-t">
+    <div class="max-w-7xl mx-auto px-4 py-8 text-sm">© <span id="y"></span> Samaritan Properties</div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  </footer>
+</body>
+</html>
