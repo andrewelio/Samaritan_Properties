@@ -20,7 +20,7 @@
       <div class="hidden md:flex gap-6 text-sm">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link active">About</a>
-        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
         <a href="contact.html" class="px-3 py-1 rounded-lg bg-black text-white">Contact</a>
       </div>
       <button id="navToggle" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg border" aria-label="Open menu" aria-expanded="false">
@@ -32,7 +32,7 @@
       <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-3 text-sm">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link active">About</a>
-        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
         <a href="contact.html" class="px-3 py-2 rounded-lg bg-black text-white text-center">Contact</a>
       </div>
     </div>
@@ -69,9 +69,15 @@
     </section>
   </main>
 
-  <footer class="border-t"><div class="mx-auto max-w-7xl px-4 py-8 text-sm">© <span id="y"></span> Samaritan Properties</div></footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-  <script>
-    (function(){const b=document.getElementById('navToggle'),m=document.getElementById('mobileMenu'),o=document.getElementById('iconOpen'),c=document.getElementById('iconClose');if(!b)return;function close(){m.classList.add('hidden');o.classList.remove('hidden');c.classList.add('hidden');b.setAttribute('aria-expanded','false')}function open(){m.classList.remove('hidden');o.classList.add('hidden');c.classList.remove('hidden');b.setAttribute('aria-expanded','true')}b.addEventListener('click',()=>m.classList.contains('hidden')?open():close());m?.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));window.addEventListener('keydown',e=>{if(e.key==='Escape')close()});})();</script>
+<!-- Shared footer include -->
+<div id="site-footer"></div>
+<script>
+  // Load footer.html and replace the placeholder div
+  fetch('footer.html')
+    .then(r => r.text())
+    .then(html => { document.getElementById('site-footer').outerHTML = html; })
+    .catch(() => { console.warn('Footer failed to load'); });
+</script>
+
 </body>
 </html>

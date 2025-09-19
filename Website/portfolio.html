@@ -87,13 +87,6 @@
     </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="border-t">
-    <div class="mx-auto max-w-7xl px-4 py-8 text-sm">
-      © <span id="y"></span> Samaritan Properties
-    </div>
-  </footer>
-
   <!-- JS -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
@@ -110,5 +103,16 @@
       window.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
     })();
   </script>
+
+<!-- Shared footer include -->
+<div id="site-footer"></div>
+<script>
+  // Load footer.html and replace the placeholder div
+  fetch('footer.html')
+    .then(r => r.text())
+    .then(html => { document.getElementById('site-footer').outerHTML = html; })
+    .catch(() => { console.warn('Footer failed to load'); });
+</script>
+
 </body>
 </html>

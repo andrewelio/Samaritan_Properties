@@ -1,0 +1,55 @@
+<!-- Website/footer.html -->
+<footer class="bg-[#0f1117] text-slate-300">
+  <div class="mx-auto max-w-7xl px-4 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+    <!-- Left: Logo -->
+    <div>
+      <div class="h-9 w-28 grid place-items-center rounded border border-white/10 bg-white/5 text-xs font-semibold">
+        LOGO
+      </div>
+    </div>
+
+    <!-- Middle: Office + Contact -->
+    <div class="space-y-8">
+      <div>
+        <div class="text-slate-400 text-sm uppercase tracking-wide">Office</div>
+        <p class="mt-2">
+          225 W Gerri Ln<br>
+          Addison, IL 60101
+        </p>
+      </div>
+
+      <div>
+        <div class="text-slate-400 text-sm uppercase tracking-wide">Contact</div>
+        <p class="mt-2">
+          <a href="tel:+17738991699" class="hover:text-white">+1 (630) 360-850</a><br>
+          <a href="mailto:info@samaritan-properties.com" class="hover:text-white">info@samaritan-properties.com</a>
+        </p>
+      </div>
+
+      <div>
+        <a href="#" class="underline hover:text-white">Investor Portal Disclaimer</a>
+      </div>
+    </div>
+
+    <!-- Right: Social -->
+    <div class="md:justify-self-end">
+      <div class="text-slate-400 text-sm uppercase tracking-wide">Follow</div>
+      <ul class="mt-2 space-y-2">
+        <li>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="hover:text-white">LinkedIn</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4 py-6 text-xs text-slate-400">
+      © <span id="footer-year"></span> 2025 Samaritan Properties
+    </div>
+  </div>
+
+  <script>
+    // set year in the footer
+    (function(){ const el = document.getElementById('footer-year'); if (el) el.textContent = new Date().getFullYear(); })();
+  </script>
+</footer>

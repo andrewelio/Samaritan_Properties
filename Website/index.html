@@ -31,7 +31,7 @@
       <div class="hidden md:flex gap-6 text-sm">
         <a href="index.html" class="nav-link active">Home</a>
         <a href="about.html" class="nav-link">About</a>
-        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
         <a href="contact.html" class="px-3 py-1 rounded-lg bg-black text-white">Contact</a>
       </div>
 
@@ -52,7 +52,7 @@
       <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-3 text-sm">
         <a href="index.html" class="nav-link active">Home</a>
         <a href="about.html" class="nav-link">About</a>
-        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="Portfolio.html" class="nav-link">Portfolio</a>
         <a href="contact.html" class="px-3 py-2 rounded-lg bg-black text-white text-center">Contact</a>
       </div>
     </div>
@@ -71,7 +71,7 @@
         Multi-family, shopping centers, development, brokerage & property management.
       </p>
       <div class="mt-8 flex gap-3 fade-in-up delay-2">
-        <a href="properties.html" class="px-6 py-3 rounded-xl bg-white text-black hover:opacity-90 transition">View Properties</a>
+        <a href="portfolio.html" class="px-6 py-3 rounded-xl bg-white text-black hover:opacity-90 transition">View Properties</a>
         <a href="contact.html" class="px-6 py-3 rounded-xl ring-1 ring-white/70 hover:bg-white/10 transition">Work with us</a>
       </div>
     </div>
@@ -92,7 +92,7 @@
   <section class="mx-auto max-w-7xl px-4 pb-20">
     <div class="flex items-end justify-between">
       <h2 class="text-2xl md:text-3xl font-semibold">Selected work</h2>
-      <a class="text-sm underline" href="properties.html">All properties</a>
+      <a class="text-sm underline" href="portfolio.html">All properties</a>
     </div>
     <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <article class="border rounded-2xl overflow-hidden hover:shadow-md transition">
@@ -110,11 +110,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="border-t">
-    <div class="mx-auto max-w-7xl px-4 py-8 text-sm">© <span id="y"></span> Samaritan Properties • info@samaritan-properties.com</div>
-  </footer>
-
   <!-- NAV JS (used on all pages) -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
@@ -131,5 +126,16 @@
       window.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
     })();
   </script>
+
+<!-- Shared footer include -->
+<div id="site-footer"></div>
+<script>
+  // Load footer.html and replace the placeholder div
+  fetch('footer.html')
+    .then(r => r.text())
+    .then(html => { document.getElementById('site-footer').outerHTML = html; })
+    .catch(() => { console.warn('Footer failed to load'); });
+</script>
+
 </body>
 </html>
