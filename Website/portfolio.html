@@ -5,30 +5,62 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Samaritan Properties | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .nav-link{color:rgb(71 85 105)} .nav-link:hover{color:#000}
+    .nav-link.active{font-weight:700;color:#000;border-bottom:2px solid #000;padding-bottom:.25rem}
+  </style>
 </head>
 <body class="bg-white text-slate-800">
+
+  <!-- HEADER -->
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
     <nav class="mx-auto max-w-7xl px-4 h-16 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
         <div class="h-8 w-24 grid place-items-center border rounded-md text-xs font-semibold">LOGO</div>
         <span class="sr-only">Samaritan Properties</span>
       </a>
+
+      <!-- Desktop links (NO Services) -->
       <div class="hidden md:flex gap-6 text-sm">
-        <a href="index.html" class="hover:opacity-70">Home</a>
-        <a href="about.html" class="hover:opacity-70">About</a>
-        <a href="portfolio.html" class="hover:opacity-70">Portfolio</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="portfolio.html" class="nav-link active">Portfolio</a>
         <a href="contact.html" class="px-3 py-1 rounded-lg bg-black text-white">Contact</a>
-        <a href="portfolio.html" class="font-medium">Portfolio</a>
       </div>
+
+      <!-- Mobile hamburger -->
+      <button id="navToggle" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg border"
+        aria-label="Open menu" aria-expanded="false">
+        <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
     </nav>
+
+    <!-- Mobile menu (NO Services) -->
+    <div id="mobileMenu" class="md:hidden hidden border-t bg-white">
+      <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-3 text-sm">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="portfolio.html" class="nav-link active">Portfolio</a>
+        <a href="contact.html" class="px-3 py-2 rounded-lg bg-black text-white text-center">Contact</a>
+      </div>
+    </div>
   </header>
 
+  <!-- MAIN -->
   <main class="mx-auto max-w-7xl px-4 py-16">
-    <h1 class="text-4xl font-bold">Our Properties</h1>
-    <p class="mt-4 text-lg max-w-2xl">A selection of current and prior projects. Replace cards with your assets.</p>
+    <h1 class="text-4xl font-bold">Portfolio</h1>
+    <p class="mt-4 text-lg max-w-2xl">
+      A selection of current and prior projects. Replace cards with your assets and details.
+    </p>
 
+    <!-- Grid -->
     <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Property card template -->
+      <!-- Card template (duplicate & replace content) -->
       <article class="group border rounded-2xl overflow-hidden hover:shadow-md transition">
         <div class="h-48 bg-slate-200"></div>
         <div class="p-4">
@@ -55,9 +87,28 @@
     </div>
   </main>
 
+  <!-- FOOTER -->
   <footer class="border-t">
-    <div class="mx-auto max-w-7xl px-4 py-8 text-sm">© <span id="y"></span> Samaritan Properties</div>
-    <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+    <div class="mx-auto max-w-7xl px-4 py-8 text-sm">
+      © <span id="y"></span> Samaritan Properties
+    </div>
   </footer>
+
+  <!-- JS -->
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function(){
+      const btn=document.getElementById('navToggle'),
+            menu=document.getElementById('mobileMenu'),
+            openI=document.getElementById('iconOpen'),
+            closeI=document.getElementById('iconClose');
+      if(!btn) return;
+      const close=()=>{menu.classList.add('hidden');openI.classList.remove('hidden');closeI.classList.add('hidden');btn.setAttribute('aria-expanded','false')};
+      const open =()=>{menu.classList.remove('hidden');openI.classList.add('hidden');closeI.classList.remove('hidden');btn.setAttribute('aria-expanded','true')};
+      btn.addEventListener('click',()=> menu.classList.contains('hidden')?open():close());
+      menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+      window.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+    })();
+  </script>
 </body>
 </html>

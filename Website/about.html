@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Samaritan Properties | About</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .nav-link{color:rgb(71 85 105)} .nav-link:hover{color:#000}
+    .nav-link.active{font-weight:700;color:#000;border-bottom:2px solid #000;padding-bottom:.25rem}
+  </style>
 </head>
 <body class="bg-white text-slate-800">
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
@@ -14,13 +18,26 @@
         <span class="sr-only">Samaritan Properties</span>
       </a>
       <div class="hidden md:flex gap-6 text-sm">
-        <a href="index.html" class="hover:opacity-70">Home</a>
-        <a href="about.html" class="hover:opacity-70">About</a>
-        <a href="portfolio.html" class="hover:opacity-70">Portfolio</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="properties.html" class="nav-link">Properties</a>
         <a href="contact.html" class="px-3 py-1 rounded-lg bg-black text-white">Contact</a>
-        <a href="about.html" class="font-medium">About</a>
       </div>
+      <button id="navToggle" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg border" aria-label="Open menu" aria-expanded="false">
+        <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
     </nav>
+    <div id="mobileMenu" class="md:hidden hidden border-t bg-white">
+      <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-3 text-sm">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="contact.html" class="px-3 py-2 rounded-lg bg-black text-white text-center">Contact</a>
+      </div>
+    </div>
   </header>
 
   <main class="mx-auto max-w-4xl px-4 py-16 space-y-16">
@@ -44,7 +61,7 @@
         <div class="p-6 border rounded-2xl bg-slate-50">
           <h3 class="font-semibold">At a glance</h3>
           <ul class="mt-3 text-sm space-y-2">
-            <li>Preferred cap rates / spread targets</li>
+            <li>Preferred cap-rate spreads</li>
             <li>Hold period & exit strategies</li>
             <li>Debt & leverage philosophy</li>
             <li>Operator advantage</li>
@@ -54,9 +71,9 @@
     </section>
   </main>
 
-  <footer class="border-t">
-    <div class="mx-auto max-w-7xl px-4 py-8 text-sm">© <span id="y"></span> Samaritan Properties</div>
-    <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-  </footer>
+  <footer class="border-t"><div class="mx-auto max-w-7xl px-4 py-8 text-sm">© <span id="y"></span> Samaritan Properties</div></footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  <script>
+    (function(){const b=document.getElementById('navToggle'),m=document.getElementById('mobileMenu'),o=document.getElementById('iconOpen'),c=document.getElementById('iconClose');if(!b)return;function close(){m.classList.add('hidden');o.classList.remove('hidden');c.classList.add('hidden');b.setAttribute('aria-expanded','false')}function open(){m.classList.remove('hidden');o.classList.add('hidden');c.classList.remove('hidden');b.setAttribute('aria-expanded','true')}b.addEventListener('click',()=>m.classList.contains('hidden')?open():close());m?.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));window.addEventListener('keydown',e=>{if(e.key==='Escape')close()});})();</script>
 </body>
 </html>
