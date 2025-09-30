@@ -1,83 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About - Samaritan Properties</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .nav-link{color:rgb(71 85 105)} .nav-link:hover{color:#000}
-    .nav-link.active{font-weight:700;color:#000;border-bottom:2px solid #000;padding-bottom:.25rem}
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
 </head>
-<body class="bg-white text-slate-800">
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
-    <nav class="mx-auto max-w-7xl px-4 h-16 flex items-center justify-between">
+<body>
+  <header id="siteHeader" class="site-header transparent">
+    <nav class="container h-20 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
-        <div class="h-8 w-24 grid place-items-center border rounded-md text-xs font-semibold">LOGO</div>
-        <span class="sr-only">Samaritan Properties</span>
+        <img src="assets/img/logo-light.png" alt="Samaritan Properties" class="logo-img logo-light">
+        <img src="assets/img/logo-dark.png"  alt="Samaritan Properties" class="logo-img logo-dark">
       </a>
-      <div class="hidden md:flex gap-6 text-sm">
+      <div class="hidden md:flex items-center gap-6 text-sm">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link active">About</a>
         <a href="portfolio.html" class="nav-link">Portfolio</a>
-        <a href="contact.html" class="px-3 py-1 rounded-lg bg-black text-white">Contact</a>
+        <a href="contact.html" class="btn btn-cta">Contact</a>
       </div>
-      <button id="navToggle" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg border" aria-label="Open menu" aria-expanded="false">
-        <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
     </nav>
-    <div id="mobileMenu" class="md:hidden hidden border-t bg-white">
-      <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-3 text-sm">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link active">About</a>
-        <a href="portfolio.html" class="nav-link">Portfolio</a>
-        <a href="contact.html" class="px-3 py-2 rounded-lg bg-black text-white text-center">Contact</a>
-      </div>
-    </div>
   </header>
 
-  <main class="mx-auto max-w-4xl px-4 py-16 space-y-16">
-    <section>
-      <h1 class="text-4xl font-bold">About Samaritan Properties</h1>
-      <p class="mt-6 text-lg">[Paste your current “About” content here.]</p>
+  <main>
+    <section class="section">
+      <div class="container grid-3" style="grid-template-columns: 1.3fr 1fr 1fr;">
+        <div class="col-span-2">
+          <h1 class="h1">About Samaritan Properties</h1>
+          <p class="lead mt-6">[Paste your About content here.]</p>
+          <p class="mt-6 text-slate-700">[Operating approach, track record, differentiators.]</p>
+        </div>
+        <div class="card h-full p-6 grid place-items-center text-slate-500">Image placeholder</div>
+      </div>
     </section>
 
-    <section class="border-t pt-12" id="investment-thesis">
-      <h2 class="text-3xl font-semibold">Investment Thesis</h2>
-      <div class="mt-6 grid md:grid-cols-2 gap-8">
-        <div class="space-y-4">
-          <p>[Paste your “Investment Thesis” paragraphs here.]</p>
-          <ul class="list-disc list-inside text-sm space-y-2">
-            <li>Target markets & asset profiles</li>
-            <li>Underwriting discipline</li>
-            <li>Value-creation playbook</li>
-            <li>Risk management & downside protection</li>
-          </ul>
+    <section id="investment-thesis" class="section">
+      <div class="container">
+        <h2 class="h2">Investment Thesis</h2>
+        <div class="grid-3 mt-6">
+          <div class="card p-6"><h3 class="font-semibold">Target Assets</h3><p class="mt-2 text-sm text-slate-600">[Markets, asset types, sizes.]</p></div>
+          <div class="card p-6"><h3 class="font-semibold">Value Creation</h3><p class="mt-2 text-sm text-slate-600">[Playbook & operational levers.]</p></div>
+          <div class="card p-6"><h3 class="font-semibold">Risk Management</h3><p class="mt-2 text-sm text-slate-600">[Leverage, downside protection.]</p></div>
         </div>
-        <div class="p-6 border rounded-2xl bg-slate-50">
-          <h3 class="font-semibold">At a glance</h3>
-          <ul class="mt-3 text-sm space-y-2">
-            <li>Preferred cap-rate spreads</li>
-            <li>Hold period & exit strategies</li>
-            <li>Debt & leverage philosophy</li>
-            <li>Operator advantage</li>
-          </ul>
+      </div>
+    </section>
+
+    <section class="section" style="background:linear-gradient(180deg,#0f172a 0%,#111827 100%);color:#fff">
+      <div class="container">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div>
+            <h2 class="h2">Ready to start your project?</h2>
+            <p class="lead mt-2" style="color:rgba(255,255,255,.8)">Tell us about your acquisition or development goals.</p>
+          </div>
+          <div class="flex gap-3">
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            <a href="portfolio.html" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.6)">View Portfolio</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-<!-- Shared footer include -->
-<div id="site-footer"></div>
-<script>
-  // Load footer.html and replace the placeholder div
-  fetch('footer.html')
-    .then(r => r.text())
-    .then(html => { document.getElementById('site-footer').outerHTML = html; })
-    .catch(() => { console.warn('Footer failed to load'); });
-</script>
-
+  <script>
+    (function(){const h=document.getElementById('siteHeader');function set(){(window.scrollY>20)?h.classList.add('scrolled'):h.classList.remove('scrolled')}set();window.addEventListener('scroll',set,{passive:true})})();
+  </script>
+  <div id="site-footer"></div>
+  <script>fetch('footer.html').then(r=>r.text()).then(html=>{document.getElementById('site-footer').outerHTML=html})</script>
 </body>
 </html>

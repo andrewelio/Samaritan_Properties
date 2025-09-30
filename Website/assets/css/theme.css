@@ -1,0 +1,75 @@
+﻿/* ===== Global Theme (edit these) ===== */
+:root{
+  --brand: #0E2A47;       /* Primary navy */
+  --accent:#2F7DE9;       /* Accent blue (CTA) */
+  --ink:#0b1220;          /* Body text */
+  --muted:#6b7280;        /* Secondary text */
+  --surface:#ffffff;      /* Page bg */
+  --card:#f8fafc;         /* Card bg */
+  --line:#e5e7eb;         /* Borders */
+  --footer:#0f1117;       /* Dark footer bg */
+}
+
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--surface);color:var(--ink);line-height:1.6;
+     font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+
+/* Layout helpers */
+.container{max-width:72rem;margin-inline:auto;padding-inline:1rem}
+.section{padding-block:4rem}
+.grid-3{display:grid;gap:1.5rem}
+@media(min-width:640px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+
+/* Headings */
+.h1{font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:800;letter-spacing:-.02em}
+.h2{font-size:clamp(1.6rem,3vw,2rem);font-weight:700}
+.lead{font-size:1.125rem;color:var(--muted)}
+
+/* Cards & buttons */
+.card{background:var(--card);border:1px solid var(--line);border-radius:1rem;overflow:hidden}
+.card:hover{box-shadow:0 10px 24px rgba(2,6,23,.08)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.25rem;border-radius:.75rem;font-weight:600}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{filter:brightness(.92)}
+.btn-outline{border:1px solid var(--line);color:var(--ink)}
+.btn-outline:hover{background:#fff}
+
+/* Hero (no image/video needed) */
+.hero{
+  position:relative; isolation:isolate; color:#fff;
+  background: radial-gradient(1200px 500px at 10% -10%, rgba(47,125,233,.20), transparent 60%),
+              radial-gradient(900px 400px at 100% 0%, rgba(2,6,23,.10), transparent 50%),
+              #0f172a; /* slate-900 */
+}
+.hero .overlay{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.15))}
+.hero .inner{position:relative}
+
+/* Scroll-reactive header */
+.site-header{position:sticky;top:0;z-index:50;transition:background .25s, box-shadow .25s, height .25s, border-color .25s;border-bottom:1px solid transparent}
+.site-header.transparent{background:transparent;border-color:transparent}
+.site-header.scrolled{background:#fff;box-shadow:0 8px 24px rgba(2,6,23,.06);border-color:var(--line)}
+.logo-img{height:44px;width:auto;transition:height .2s, opacity .2s}
+.site-header.scrolled .logo-img{height:28px}
+.logo-dark{display:none}
+.site-header.scrolled .logo-dark{display:block}
+.site-header.scrolled .logo-light{display:none}
+.site-header.transparent .nav-link{color:#fff}
+.site-header.transparent .nav-link:hover{color:#e5e7eb}
+.site-header.scrolled .nav-link{color:#0b1220}
+.site-header.scrolled .nav-link:hover{color:#000}
+.nav-link.active{font-weight:700;border-bottom:2px solid currentColor;padding-bottom:.25rem}
+
+/* CTA in header */
+.btn-cta{padding:.55rem 1rem;border-radius:.65rem;font-weight:600;background:var(--accent);color:#fff;box-shadow:0 8px 16px rgba(47,125,233,.25)}
+.btn-cta:hover{filter:brightness(.92)}
+
+/* Simple fade-up */
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.fade-in-up{opacity:0;animation:fadeUp .7s ease-out forwards}
+.delay-1{animation-delay:.15s}.delay-2{animation-delay:.3s}
+
+/* Footer base */
+footer{background:var(--footer);color:#cbd5e1}
+footer a{color:#fff}
+footer a:hover{opacity:.9}

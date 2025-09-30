@@ -1,55 +1,48 @@
-<!-- Website/footer.html -->
-<footer class="bg-[#0f1117] text-slate-300">
-  <div class="mx-auto max-w-7xl px-4 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
-    <!-- Left: Logo -->
-    <div>
-      <div class="h-9 w-28 grid place-items-center rounded border border-white/10 bg-white/5 text-xs font-semibold">
-        LOGO
-      </div>
-    </div>
-
-    <!-- Middle: Office + Contact -->
-    <div class="space-y-8">
+<footer>
+  <div class="container section" style="padding-block:3rem">
+    <div class="grid-3">
+      <!-- Logo / blurb -->
       <div>
-        <div class="text-slate-400 text-sm uppercase tracking-wide">Office</div>
+        <img src="assets/img/logo-light.png" alt="Samaritan Properties" class="h-9 w-auto">
+        <p class="mt-4" style="color:#94a3b8">Commercial real estate investment and operations across the Chicago-land suburbs.</p>
+      </div>
+
+      <!-- Office / Contact -->
+      <div>
+        <div class="text-sm uppercase tracking-wide" style="color:#94a3b8">Office</div>
+        <p class="mt-2">2211 N. Elston Ave, Suite 306<br>Chicago, IL 60614</p>
+        <div class="text-sm uppercase tracking-wide mt-6" style="color:#94a3b8">Contact</div>
         <p class="mt-2">
-          225 W Gerri Ln<br>
-          Addison, IL 60101
+          <a href="tel:+17738991699">+1 (773) 899-1699</a><br>
+          <a href="mailto:info@samaritan-properties.com">info@samaritan-properties.com</a>
         </p>
       </div>
 
-      <div>
-        <div class="text-slate-400 text-sm uppercase tracking-wide">Contact</div>
-        <p class="mt-2">
-          <a href="tel:+17738991699" class="hover:text-white">+1 (630) 360-850</a><br>
-          <a href="mailto:info@samaritan-properties.com" class="hover:text-white">info@samaritan-properties.com</a>
-        </p>
-      </div>
+      <!-- Quick links / Social -->
+      <div class="md:justify-self-end">
+        <div class="text-sm uppercase tracking-wide" style="color:#94a3b8">Links</div>
+        <ul class="mt-2 space-y-2" style="list-style:none;padding:0;margin:0">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
 
-      <div>
-        <a href="#" class="underline hover:text-white">Investor Portal Disclaimer</a>
+        <div class="text-sm uppercase tracking-wide mt-6" style="color:#94a3b8">Follow</div>
+        <ul class="mt-2" style="list-style:none;padding:0;margin:0">
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
       </div>
-    </div>
-
-    <!-- Right: Social -->
-    <div class="md:justify-self-end">
-      <div class="text-slate-400 text-sm uppercase tracking-wide">Follow</div>
-      <ul class="mt-2 space-y-2">
-        <li>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="hover:text-white">LinkedIn</a>
-        </li>
-      </ul>
     </div>
   </div>
 
-  <div class="border-t border-white/10">
-    <div class="mx-auto max-w-7xl px-4 py-6 text-xs text-slate-400">
-      © <span id="footer-year"></span> 2025 Samaritan Properties
+  <div style="border-top:1px solid rgba(255,255,255,.12)">
+    <div class="container" style="padding-block:1rem;color:#94a3b8">
+      © <span id="footer-year"></span> Samaritan Properties
     </div>
   </div>
 
   <script>
-    // set year in the footer
-    (function(){ const el = document.getElementById('footer-year'); if (el) el.textContent = new Date().getFullYear(); })();
+    (function(){const y=document.getElementById('footer-year'); if(y) y.textContent=new Date().getFullYear();})();
   </script>
 </footer>

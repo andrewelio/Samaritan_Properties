@@ -1,141 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Samaritan Properties</title>
-  <meta name="description" content="Commercial real estate investment across the Chicago-land suburbs: multifamily, shopping centers, development, brokerage & property management." />
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home - Samaritan Properties</title>
+  <meta name="description" content="Commercial real estate investment across the Chicago-land area: multi-family, shopping centers, development, brokerage & property management.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html{scroll-behavior:smooth}
-    /* nav link styles (used on all pages) */
-    .nav-link{color:rgb(71 85 105)} .nav-link:hover{color:#000}
-    .nav-link.active{font-weight:700;color:#000;border-bottom:2px solid #000;padding-bottom:.25rem}
-    /* simple fade-up animation */
-    @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-    .fade-in-up{opacity:0;animation:fadeUp .7s ease-out forwards}
-    .delay-1{animation-delay:.15s}.delay-2{animation-delay:.3s}
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
 </head>
-<body class="bg-white text-slate-800">
+<body>
 
   <!-- HEADER -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
-    <nav class="mx-auto max-w-7xl px-4 h-16 flex items-center justify-between">
+  <header id="siteHeader" class="site-header transparent">
+    <nav class="container h-20 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
-        <div class="h-8 w-24 grid place-items-center border rounded-md text-xs font-semibold">LOGO</div>
-        <span class="sr-only">Samaritan Properties</span>
+        <img src="assets/img/logo-light.png" alt="Samaritan Properties" class="logo-img logo-light">
+        <img src="assets/img/logo-dark.png"  alt="Samaritan Properties" class="logo-img logo-dark">
       </a>
-
-      <!-- Desktop -->
-      <div class="hidden md:flex gap-6 text-sm">
+      <div class="hidden md:flex items-center gap-6 text-sm">
         <a href="index.html" class="nav-link active">Home</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="portfolio.html" class="nav-link">Portfolio</a>
-        <a href="contact.html" class="px-3 py-1 rounded-lg bg-black text-white">Contact</a>
+        <a href="contact.html" class="btn btn-cta">Contact</a>
       </div>
-
-      <!-- Mobile hamburger -->
-      <button id="navToggle" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg border"
-        aria-label="Open menu" aria-expanded="false">
-        <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-        <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
     </nav>
-
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="md:hidden hidden border-t bg-white">
-      <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-3 text-sm">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="Portfolio.html" class="nav-link">Portfolio</a>
-        <a href="contact.html" class="px-3 py-2 rounded-lg bg-black text-white text-center">Contact</a>
-      </div>
-    </div>
   </header>
 
-  <!-- HERO (video + overlay + animated content) -->
-  <section class="relative isolate">
-    <video class="absolute inset-0 h-full w-full object-cover"
-      src="/assets/video/hero.mp4" autoplay muted playsinline loop
-      poster="/assets/img/hero.jpg"></video>
-    <div class="absolute inset-0 bg-black/45"></div>
-
-    <div class="relative mx-auto max-w-7xl px-4 py-24 md:py-36 text-white">
-      <h1 class="text-4xl md:text-6xl font-bold tracking-tight fade-in-up">Commercial Real Estate • Chicago-land</h1>
-      <p class="mt-5 max-w-2xl text-lg fade-in-up delay-1">
-        Multi-family, shopping centers, development, brokerage & property management.
-      </p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="container section inner">
+      <h1 class="h1 fade-in-up">Commercial Real Estate • Chicago-land</h1>
+      <p class="lead mt-4 fade-in-up delay-1">Multi-family, shopping centers, development, brokerage & property management.</p>
       <div class="mt-8 flex gap-3 fade-in-up delay-2">
-        <a href="portfolio.html" class="px-6 py-3 rounded-xl bg-white text-black hover:opacity-90 transition">View Properties</a>
-        <a href="contact.html" class="px-6 py-3 rounded-xl ring-1 ring-white/70 hover:bg-white/10 transition">Work with us</a>
+        <a href="portfolio.html" class="btn btn-primary">View Portfolio</a>
+        <a href="contact.html" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.6)">Work with us</a>
       </div>
     </div>
   </section>
 
   <!-- WHAT WE DO -->
-  <section class="mx-auto max-w-7xl px-4 py-16">
-    <h2 class="text-2xl md:text-3xl font-semibold">What we do</h2>
-    <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="p-6 border rounded-2xl"><h3 class="font-semibold">Multi-family</h3><p class="mt-2 text-sm">Acquisition, value-add, operations.</p></div>
-      <div class="p-6 border rounded-2xl"><h3 class="font-semibold">Shopping Centers</h3><p class="mt-2 text-sm">Stabilization, leasing, repositioning.</p></div>
-      <div class="p-6 border rounded-2xl"><h3 class="font-semibold">Development</h3><p class="mt-2 text-sm">Ground-up & re-development.</p></div>
-      <div class="p-6 border rounded-2xl"><h3 class="font-semibold">Brokerage & PM</h3><p class="mt-2 text-sm">Transactions & management.</p></div>
+  <section class="section">
+    <div class="container">
+      <h2 class="h2">What we do</h2>
+      <div class="grid-3 mt-6">
+        <div class="card p-6"><h3 class="font-semibold">Multi-family</h3><p class="mt-2 text-sm text-slate-600">Acquisition, value-add, operations.</p></div>
+        <div class="card p-6"><h3 class="font-semibold">Shopping Centers</h3><p class="mt-2 text-sm text-slate-600">Stabilization, leasing, repositioning.</p></div>
+        <div class="card p-6"><h3 class="font-semibold">Development</h3><p class="mt-2 text-sm text-slate-600">Ground-up & re-development.</p></div>
+      </div>
     </div>
   </section>
 
-  <!-- FEATURED -->
-  <section class="mx-auto max-w-7xl px-4 pb-20">
-    <div class="flex items-end justify-between">
-      <h2 class="text-2xl md:text-3xl font-semibold">Selected work</h2>
-      <a class="text-sm underline" href="portfolio.html">All properties</a>
-    </div>
-    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <article class="border rounded-2xl overflow-hidden hover:shadow-md transition">
-        <div class="h-48 bg-slate-200"></div>
-        <div class="p-4"><h3 class="font-semibold">Silver Court Apartments</h3><p class="text-sm mt-1">Elgin, IL • 36 Units • Value-add</p></div>
-      </article>
-      <article class="border rounded-2xl overflow-hidden hover:shadow-md transition">
-        <div class="h-48 bg-slate-200"></div>
-        <div class="p-4"><h3 class="font-semibold">Neighborhood Retail</h3><p class="text-sm mt-1">Suburban Chicago • 25k SF</p></div>
-      </article>
-      <article class="border rounded-2xl overflow-hidden hover:shadow-md transition">
-        <div class="h-48 bg-slate-200"></div>
-        <div class="p-4"><h3 class="font-semibold">Outparcel Development</h3><p class="text-sm mt-1">North Aurora, IL • Ground-up</p></div>
-      </article>
+  <!-- PRE-FOOTER CTA -->
+  <section class="section" style="background:linear-gradient(180deg,#0f172a 0%,#111827 100%);color:#fff">
+    <div class="container">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <h2 class="h2">Ready to start your project?</h2>
+          <p class="lead mt-2" style="color:rgba(255,255,255,.8)">Tell us about your acquisition or development goals.</p>
+        </div>
+        <div class="flex gap-3">
+          <a href="contact.html" class="btn btn-primary">Contact Us</a>
+          <a href="portfolio.html" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.6)">View Portfolio</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- NAV JS (used on all pages) -->
+  <!-- Scripts -->
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    (function () {
-      const btn = document.getElementById('navToggle');
-      const menu = document.getElementById('mobileMenu');
-      const iconOpen = document.getElementById('iconOpen');
-      const iconClose = document.getElementById('iconClose');
-      if(!btn) return;
-      function closeMenu(){menu.classList.add('hidden');iconOpen.classList.remove('hidden');iconClose.classList.add('hidden');btn.setAttribute('aria-expanded','false')}
-      function openMenu(){menu.classList.remove('hidden');iconOpen.classList.add('hidden');iconClose.classList.remove('hidden');btn.setAttribute('aria-expanded','true')}
-      btn.addEventListener('click',()=> menu.classList.contains('hidden')?openMenu():closeMenu());
-      menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
-      window.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+    (function(){
+      const h=document.getElementById('siteHeader');
+      function set(){ (window.scrollY>20)?h.classList.add('scrolled'):h.classList.remove('scrolled'); }
+      set(); window.addEventListener('scroll', set, {passive:true});
     })();
   </script>
-
-<!-- Shared footer include -->
-<div id="site-footer"></div>
-<script>
-  // Load footer.html and replace the placeholder div
-  fetch('footer.html')
-    .then(r => r.text())
-    .then(html => { document.getElementById('site-footer').outerHTML = html; })
-    .catch(() => { console.warn('Footer failed to load'); });
-</script>
-
+  <div id="site-footer"></div>
+  <script>
+    fetch('footer.html').then(r=>r.text()).then(html=>{document.getElementById('site-footer').outerHTML=html});
+  </script>
 </body>
 </html>

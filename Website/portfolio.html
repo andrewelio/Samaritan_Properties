@@ -1,118 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio - Samaritan Properties</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .nav-link{color:rgb(71 85 105)} .nav-link:hover{color:#000}
-    .nav-link.active{font-weight:700;color:#000;border-bottom:2px solid #000;padding-bottom:.25rem}
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
 </head>
-<body class="bg-white text-slate-800">
-
-  <!-- HEADER -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
-    <nav class="mx-auto max-w-7xl px-4 h-16 flex items-center justify-between">
+<body>
+  <header id="siteHeader" class="site-header transparent">
+    <nav class="container h-20 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
-        <div class="h-8 w-24 grid place-items-center border rounded-md text-xs font-semibold">LOGO</div>
-        <span class="sr-only">Samaritan Properties</span>
+        <img src="assets/img/logo-light.png" alt="Samaritan Properties" class="logo-img logo-light">
+        <img src="assets/img/logo-dark.png"  alt="Samaritan Properties" class="logo-img logo-dark">
       </a>
-
-      <!-- Desktop links (NO Services) -->
-      <div class="hidden md:flex gap-6 text-sm">
+      <div class="hidden md:flex items-center gap-6 text-sm">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="portfolio.html" class="nav-link active">Portfolio</a>
-        <a href="contact.html" class="px-3 py-1 rounded-lg bg-black text-white">Contact</a>
+        <a href="contact.html" class="btn btn-cta">Contact</a>
       </div>
-
-      <!-- Mobile hamburger -->
-      <button id="navToggle" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg border"
-        aria-label="Open menu" aria-expanded="false">
-        <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-        <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
     </nav>
-
-    <!-- Mobile menu (NO Services) -->
-    <div id="mobileMenu" class="md:hidden hidden border-t bg-white">
-      <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-3 text-sm">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="portfolio.html" class="nav-link active">Portfolio</a>
-        <a href="contact.html" class="px-3 py-2 rounded-lg bg-black text-white text-center">Contact</a>
-      </div>
-    </div>
   </header>
 
-  <!-- MAIN -->
-  <main class="mx-auto max-w-7xl px-4 py-16">
-    <h1 class="text-4xl font-bold">Portfolio</h1>
-    <p class="mt-4 text-lg max-w-2xl">
-      A selection of current and prior projects. Replace cards with your assets and details.
-    </p>
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 class="h1">Portfolio</h1>
+        <p class="lead mt-4">A selection of current and prior projects.</p>
 
-    <!-- Grid -->
-    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Card template (duplicate & replace content) -->
-      <article class="group border rounded-2xl overflow-hidden hover:shadow-md transition">
-        <div class="h-48 bg-slate-200"></div>
-        <div class="p-4">
-          <h3 class="font-semibold group-hover:underline">Silver Court Apartments</h3>
-          <p class="text-sm mt-1">Elgin, IL • 36 Units • Value-add</p>
+        <div class="grid-3 mt-8">
+          <article class="card">
+            <div class="h-56 bg-slate-200"></div>
+            <div class="p-4">
+              <h3 class="font-semibold">Silver Court Apartments</h3>
+              <p class="text-sm mt-1 text-slate-600">Elgin, IL • 36 Units • Value-add</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="h-56 bg-slate-200"></div>
+            <div class="p-4">
+              <h3 class="font-semibold">Neighborhood Retail</h3>
+              <p class="text-sm mt-1 text-slate-600">Suburban Chicago • 25k SF</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="h-56 bg-slate-200"></div>
+            <div class="p-4">
+              <h3 class="font-semibold">Outparcel Development</h3>
+              <p class="text-sm mt-1 text-slate-600">North Aurora, IL • Ground-up</p>
+            </div>
+          </article>
         </div>
-      </article>
+      </div>
+    </section>
 
-      <article class="group border rounded-2xl overflow-hidden hover:shadow-md transition">
-        <div class="h-48 bg-slate-200"></div>
-        <div class="p-4">
-          <h3 class="font-semibold group-hover:underline">Neighborhood Retail</h3>
-          <p class="text-sm mt-1">Suburban Chicago • 25k SF</p>
+    <section class="section" style="background:linear-gradient(180deg,#0f172a 0%,#111827 100%);color:#fff">
+      <div class="container">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div>
+            <h2 class="h2">Let’s talk opportunities</h2>
+            <p class="lead mt-2" style="color:rgba(255,255,255,.8)">We acquire, operate and develop with discipline.</p>
+          </div>
+          <div class="flex gap-3">
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            <a href="about.html" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.6)">About Us</a>
+          </div>
         </div>
-      </article>
-
-      <article class="group border rounded-2xl overflow-hidden hover:shadow-md transition">
-        <div class="h-48 bg-slate-200"></div>
-        <div class="p-4">
-          <h3 class="font-semibold group-hover:underline">Outparcel Development</h3>
-          <p class="text-sm mt-1">North Aurora, IL • Ground-up</p>
-        </div>
-      </article>
-    </div>
+      </div>
+    </section>
   </main>
 
-  <!-- JS -->
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    (function(){
-      const btn=document.getElementById('navToggle'),
-            menu=document.getElementById('mobileMenu'),
-            openI=document.getElementById('iconOpen'),
-            closeI=document.getElementById('iconClose');
-      if(!btn) return;
-      const close=()=>{menu.classList.add('hidden');openI.classList.remove('hidden');closeI.classList.add('hidden');btn.setAttribute('aria-expanded','false')};
-      const open =()=>{menu.classList.remove('hidden');openI.classList.add('hidden');closeI.classList.remove('hidden');btn.setAttribute('aria-expanded','true')};
-      btn.addEventListener('click',()=> menu.classList.contains('hidden')?open():close());
-      menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
-      window.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
-    })();
+    (function(){const h=document.getElementById('siteHeader');function set(){(window.scrollY>20)?h.classList.add('scrolled'):h.classList.remove('scrolled')}set();window.addEventListener('scroll',set,{passive:true})})();
   </script>
-
-<!-- Shared footer include -->
-<div id="site-footer"></div>
-<script>
-  // Load footer.html and replace the placeholder div
-  fetch('footer.html')
-    .then(r => r.text())
-    .then(html => { document.getElementById('site-footer').outerHTML = html; })
-    .catch(() => { console.warn('Footer failed to load'); });
-</script>
-
+  <div id="site-footer"></div>
+  <script>fetch('footer.html').then(r=>r.text()).then(html=>{document.getElementById('site-footer').outerHTML=html})</script>
 </body>
 </html>
