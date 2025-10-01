@@ -1,13 +1,13 @@
 ﻿/* ===== Global Theme (edit these) ===== */
 :root{
-  --brand: #0E2A47;       /* Primary navy */
-  --accent:#2F7DE9;       /* Accent blue (CTA) */
+  --brand: #000000;       /* Primary navy */
+  --accent:#d21818;       /* Accent blue (CTA) */
   --ink:#0b1220;          /* Body text */
   --muted:#6b7280;        /* Secondary text */
   --surface:#ffffff;      /* Page bg */
   --card:#f8fafc;         /* Card bg */
   --line:#e5e7eb;         /* Borders */
-  --footer:#0f1117;       /* Dark footer bg */
+  --footer:#000000;       /* Dark footer bg */
 }
 
 html{scroll-behavior:smooth}
@@ -49,8 +49,8 @@ body{margin:0;background:var(--surface);color:var(--ink);line-height:1.6;
 .site-header{position:sticky;top:0;z-index:50;transition:background .25s, box-shadow .25s, height .25s, border-color .25s;border-bottom:1px solid transparent}
 .site-header.transparent{background:transparent;border-color:transparent}
 .site-header.scrolled{background:#fff;box-shadow:0 8px 24px rgba(2,6,23,.06);border-color:var(--line)}
-.logo-img{height:44px;width:auto;transition:height .2s, opacity .2s}
-.site-header.scrolled .logo-img{height:28px}
+.logo-img{height:120px;width:auto;transition:height .2s, opacity .2s}
+.site-header.scrolled .logo-img{height:80px}
 .logo-dark{display:none}
 .site-header.scrolled .logo-dark{display:block}
 .site-header.scrolled .logo-light{display:none}
@@ -73,3 +73,31 @@ body{margin:0;background:var(--surface);color:var(--ink);line-height:1.6;
 footer{background:var(--footer);color:#cbd5e1}
 footer a{color:#fff}
 footer a:hover{opacity:.9}
+
+/* Header default (overlay style) */
+.site-header {
+  background: transparent;
+  padding: 20px 0;
+}
+.site-header .logo-light { display: block; height: 120px; }
+.site-header .logo-dark { display: none; }
+
+/* When scrolled */
+.site-header.scrolled {
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 10px 0;
+}
+.site-header.scrolled .logo-light { display: none; }
+.site-header.scrolled .logo-dark { display: block; height: 80px; }
+
+/* Nav link styling */
+.nav-link {
+  color: white;
+  font-weight: 600;
+  transition: color .3s;
+}
+.site-header.scrolled .nav-link {
+  color: black;
+}
+

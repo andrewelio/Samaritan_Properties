@@ -13,30 +13,34 @@
 <body>
 
   <!-- HEADER -->
-  <header id="siteHeader" class="site-header transparent">
-    <nav class="container h-20 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/img/logo-light.png" alt="Samaritan Properties" class="logo-img logo-light">
-        <img src="assets/img/logo-dark.png"  alt="Samaritan Properties" class="logo-img logo-dark">
+  <header class="site-header fixed top-0 left-0 w-full z-50 transition-all duration-300">
+    <div class="container mx-auto flex justify-between items-center px-6 py-4">
+      <!-- Logo -->
+      <a href="index.html">
+        <img src="assets/img/logo-light.png" alt="Samaritan Properties Logo" class="logo-img logo-light">
+        <img src="assets/img/logo-dark.png" alt="Samaritan Properties Logo" class="logo-img logo-dark hidden">
       </a>
-      <div class="hidden md:flex items-center gap-6 text-sm">
-        <a href="index.html" class="nav-link active">Home</a>
+
+      <!-- Nav -->
+      <nav class="flex space-x-6">
+        <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="portfolio.html" class="nav-link">Portfolio</a>
-        <a href="contact.html" class="btn btn-cta">Contact</a>
-      </div>
-    </nav>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="container section inner">
-      <h1 class="h1 fade-in-up">Commercial Real Estate • Chicago-land</h1>
-      <p class="lead mt-4 fade-in-up delay-1">Multi-family, shopping centers, development, brokerage & property management.</p>
-      <div class="mt-8 flex gap-3 fade-in-up delay-2">
-        <a href="portfolio.html" class="btn btn-primary">View Portfolio</a>
-        <a href="contact.html" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.6)">Work with us</a>
+  <section class="hero relative w-full h-screen overflow-hidden">
+    <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+        <source src="assets/video/hero.mp4" type="video/mp4">
+      </video>
+    <div class="absolute inset-0 bg-black/40"></div> <!-- dark overlay -->
+    <div class="relative z-10 flex flex-col justify-center items-center h-full text-white text-center">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4">Building Wealth, Brick by Brick</h1>
+      <div class="space-x-4">    
+        <a href="contact.html" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold">Work with Us</a>  
       </div>
     </div>
   </section>
@@ -46,9 +50,10 @@
     <div class="container">
       <h2 class="h2">What we do</h2>
       <div class="grid-3 mt-6">
-        <div class="card p-6"><h3 class="font-semibold">Multi-family</h3><p class="mt-2 text-sm text-slate-600">Acquisition, value-add, operations.</p></div>
-        <div class="card p-6"><h3 class="font-semibold">Shopping Centers</h3><p class="mt-2 text-sm text-slate-600">Stabilization, leasing, repositioning.</p></div>
-        <div class="card p-6"><h3 class="font-semibold">Development</h3><p class="mt-2 text-sm text-slate-600">Ground-up & re-development.</p></div>
+        <div class="card p-6"><h3 class="font-semibold">INVESTMENT</h3><p class="mt-2 text-sm text-slate-600">Multifamily, Retail strip centers, Ground-up development.</p></div>
+        <div class="card p-6"><h3 class="font-semibold">PROPERTY MANAGEMENT</h3><p class="mt-2 text-sm text-slate-600">We manage our properties in-house with a hands-on approach focused on maximizing asset performance.</p></div>
+        <div class="card p-6"><h3 class="font-semibold">DEVELOPMENT</h3><p class="mt-2 text-sm text-slate-600">We value our development opportunities with a builder-owner mindset and oversee every stage of the asset transformation.</p></div>
+        <div class="card p-6"><h3 class="font-semibold">BROKERAGE</h3><p class="mt-2 text-sm text-slate-600">Buying, Selling, Leasing.</p></div>
       </div>
     </div>
   </section>
@@ -80,6 +85,13 @@
   <div id="site-footer"></div>
   <script>
     fetch('footer.html').then(r=>r.text()).then(html=>{document.getElementById('site-footer').outerHTML=html});
+  </script>
+
+  <script>
+  window.addEventListener("scroll", function() {
+    const header = document.querySelector(".site-header");
+    header.classList.toggle("scrolled", window.scrollY > 50);
+  });
   </script>
 </body>
 </html>
