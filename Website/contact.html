@@ -10,22 +10,29 @@
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
 </head>
 <body>
-  <header id="siteHeader" class="site-header transparent">
-    <nav class="container h-20 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/img/logo-light.png" alt="Samaritan Properties" class="logo-img logo-light">
-        <img src="assets/img/logo-dark.png"  alt="Samaritan Properties" class="logo-img logo-dark">
-      </a>
-      <div class="hidden md:flex items-center gap-6 text-sm">
+
+  <!-- HEADER -->
+  <header id="siteHeader" class="site-header fixed top-0 left-0 w-full z-50 transition-all duration-300">
+    <div class="container mx-auto flex justify-between items-center px-6 py-4">
+      <!-- Logo (independent of nav) -->
+      <div class="header-brand">
+        <!-- Primary header logo (single) -->
+        <a href="index.html" class="brand-link inline-logo">
+          <img src="assets/img/logo-light.png" alt="Samaritan Properties Logo" class="header-logo-inline">
+        </a>
+      </div>
+
+      <!-- Nav -->
+      <nav class="flex space-x-10">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="portfolio.html" class="nav-link">Portfolio</a>
-        <a href="contact.html" class="btn btn-cta">Contact</a>
-      </div>
-    </nav>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main class="pt-24">
     <section class="section">
       <div class="container">
         <h1 class="h1">Contact Us</h1>
@@ -72,16 +79,36 @@
   </main>
 
   <script>
-    (function(){const h=document.getElementById('siteHeader');function set(){(window.scrollY>20)?h.classList.add('scrolled'):h.classList.remove('scrolled')}set();window.addEventListener('scroll',set,{passive:true})})();
+    // Single scroll handler: toggles .scrolled on header when page is scrolled
+    (function(){
+      const header = document.getElementById('siteHeader') || document.querySelector('.site-header');
+      if(!header) return;
+      const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 50);
+      onScroll();
+      window.addEventListener('scroll', onScroll, {passive:true});
+    })();
+    </script>
+    <script>
+      // Single scroll handler: toggles .scrolled on header and swaps the header logo on scroll
+      (function(){
+        const header = document.getElementById('siteHeader') || document.querySelector('.site-header');
+        if(!header) return;
+        const lightSrc = 'assets/img/logo-light.png';
+        const darkSrc = 'assets/img/logo-dark.png';
+        const getLogo = () => document.querySelector('.header-logo-inline');
+        function onScroll(){
+          const scrolled = window.scrollY > 50;
+          header.classList.toggle('scrolled', scrolled);
+          const logo = getLogo();
+          if(logo){
+            logo.src = scrolled ? darkSrc : lightSrc;
+          }
+        }
+        onScroll();
+        window.addEventListener('scroll', onScroll, {passive:true});
+      })();
   </script>
   <div id="site-footer"></div>
   <script>fetch('footer.html').then(r=>r.text()).then(html=>{document.getElementById('site-footer').outerHTML=html})</script>
-
-  <script>
-  window.addEventListener("scroll", function() {
-    const header = document.querySelector(".site-header");
-    header.classList.toggle("scrolled", window.scrollY > 50);
-  });
-  </script>
 </body>
 </html>

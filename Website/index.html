@@ -13,16 +13,18 @@
 <body>
 
   <!-- HEADER -->
-  <header class="site-header fixed top-0 left-0 w-full z-50 transition-all duration-300">
+  <header id="siteHeader" class="site-header fixed top-0 left-0 w-full z-50 transition-all duration-300">
     <div class="container mx-auto flex justify-between items-center px-6 py-4">
-      <!-- Logo -->
-      <a href="index.html">
-        <img src="assets/img/logo-light.png" alt="Samaritan Properties Logo" class="logo-img logo-light">
-        <img src="assets/img/logo-dark.png" alt="Samaritan Properties Logo" class="logo-img logo-dark hidden">
-      </a>
+      <!-- Logo (independent of nav) -->
+      <div class="header-brand">
+        <!-- Primary header logo (single) -->
+        <a href="index.html" class="brand-link inline-logo">
+          <img src="assets/img/logo-light.png" alt="Samaritan Properties Logo" class="header-logo-inline">
+        </a>
+      </div>
 
       <!-- Nav -->
-      <nav class="flex space-x-6">
+      <nav class="flex space-x-10">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="portfolio.html" class="nav-link">Portfolio</a>
@@ -76,10 +78,23 @@
 
   <!-- Scripts -->
   <script>
+    // Single scroll handler: toggles .scrolled on header and swaps the header logo on scroll
     (function(){
-      const h=document.getElementById('siteHeader');
-      function set(){ (window.scrollY>20)?h.classList.add('scrolled'):h.classList.remove('scrolled'); }
-      set(); window.addEventListener('scroll', set, {passive:true});
+      const header = document.getElementById('siteHeader') || document.querySelector('.site-header');
+      if(!header) return;
+      const lightSrc = 'assets/img/logo-light.png';
+      const darkSrc = 'assets/img/logo-dark.png';
+      const getLogo = () => document.querySelector('.header-logo-inline');
+      function onScroll(){
+        const scrolled = window.scrollY > 50;
+        header.classList.toggle('scrolled', scrolled);
+        const logo = getLogo();
+        if(logo){
+          logo.src = scrolled ? darkSrc : lightSrc;
+        }
+      }
+      onScroll();
+      window.addEventListener('scroll', onScroll, {passive:true});
     })();
   </script>
   <div id="site-footer"></div>
@@ -87,11 +102,6 @@
     fetch('footer.html').then(r=>r.text()).then(html=>{document.getElementById('site-footer').outerHTML=html});
   </script>
 
-  <script>
-  window.addEventListener("scroll", function() {
-    const header = document.querySelector(".site-header");
-    header.classList.toggle("scrolled", window.scrollY > 50);
-  });
-  </script>
+  <!-- consolidated scroll handler above -->
 </body>
 </html>

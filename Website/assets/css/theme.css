@@ -1,103 +1,187 @@
-﻿/* ===== Global Theme (edit these) ===== */
+﻿/* =========================================================
+   Samaritan Properties – theme.css (clean full reset)
+   ---------------------------------------------------------
+   - Simple fixed header (logo left, nav right)
+   - Thinner white bar when scrolled
+   - Light/Dark logo swap on scroll
+   - Wide nav spacing
+   - Clean hero + footer styles
+   ========================================================= */
+
+/* ---------- CSS variables ---------- */
 :root{
-  --brand: #000000;       /* Primary navy */
-  --accent:#d21818;       /* Accent blue (CTA) */
-  --ink:#0b1220;          /* Body text */
-  --muted:#6b7280;        /* Secondary text */
-  --surface:#ffffff;      /* Page bg */
-  --card:#f8fafc;         /* Card bg */
-  --line:#e5e7eb;         /* Borders */
-  --footer:#000000;       /* Dark footer bg */
+  --brand: #000000;      /* brand black */
+  --accent:#d21818;      /* accent red */
+  --ink:#0b1220;         /* body text */
+  --muted:#6b7280;       /* secondary text */
+  --surface:#0b1220;     /* page bg (dark) */
+  --card:#0f172a;        /* dark card bg */
+  --line:#e5e7eb;        /* borders on light background */
+  --line-dark:rgba(255,255,255,.08); /* borders on dark background */
+  --footer:#000;         /* footer bg */
 }
 
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--surface);color:var(--ink);line-height:1.6;
-     font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+/* ---------- Base ---------- */
+html { scroll-behavior: smooth; }
+* { box-sizing: border-box; }
+body{
+  margin:0;
+  background:var(--surface);
+  color:#e5e7eb;
+  line-height:1.6;
+  font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
 
 /* Layout helpers */
-.container{max-width:72rem;margin-inline:auto;padding-inline:1rem}
-.section{padding-block:4rem}
-.grid-3{display:grid;gap:1.5rem}
-@media(min-width:640px){.grid-3{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+.container{ max-width: 1200px; margin-inline:auto; padding-inline: 24px; }
+.section{ padding-block: 4rem; }
 
 /* Headings */
-.h1{font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:800;letter-spacing:-.02em}
-.h2{font-size:clamp(1.6rem,3vw,2rem);font-weight:700}
-.lead{font-size:1.125rem;color:var(--muted)}
+.h1{ font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; letter-spacing:-.02em; }
+.h2{ font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 700; }
+.lead{ font-size: 1.125rem; color: #cbd5e1; }
 
-/* Cards & buttons */
-.card{background:var(--card);border:1px solid var(--line);border-radius:1rem;overflow:hidden}
-.card:hover{box-shadow:0 10px 24px rgba(2,6,23,.08)}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.25rem;border-radius:.75rem;font-weight:600}
-.btn-primary{background:var(--accent);color:#fff}
-.btn-primary:hover{filter:brightness(.92)}
-.btn-outline{border:1px solid var(--line);color:var(--ink)}
-.btn-outline:hover{background:#fff}
+/* Buttons */
+.btn{ display:inline-flex; align-items:center; gap:.5rem; padding:.75rem 1.25rem; border-radius:.75rem; font-weight:700; }
+.btn-primary{ background:#16a34a; color:#fff; }
+.btn-primary:hover{ filter:brightness(.92); }
+.btn-outline{ border:1px solid var(--line-dark); color:#fff; }
+.btn-outline:hover{ background:rgba(255,255,255,.05); }
 
-/* Hero (no image/video needed) */
+/* Cards (dark style) */
+.card{ background:var(--card); border:1px solid var(--line-dark); border-radius:1rem; overflow:hidden; }
+.card:hover{ box-shadow:0 10px 24px rgba(2,6,23,.35); }
+
+/* ---------- Hero (dark) ---------- */
 .hero{
   position:relative; isolation:isolate; color:#fff;
-  background: radial-gradient(1200px 500px at 10% -10%, rgba(47,125,233,.20), transparent 60%),
-              radial-gradient(900px 400px at 100% 0%, rgba(2,6,23,.10), transparent 50%),
-              #0f172a; /* slate-900 */
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(47,125,233,.18), transparent 60%),
+    radial-gradient(900px 400px at 100% 0%, rgba(2,6,23,.15), transparent 50%),
+    #0b1220;
 }
-.hero .overlay{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.15))}
-.hero .inner{position:relative}
+.hero .overlay{ position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.12)); }
+.hero .inner{ position:relative; }
 
-/* Scroll-reactive header */
-.site-header{position:sticky;top:0;z-index:50;transition:background .25s, box-shadow .25s, height .25s, border-color .25s;border-bottom:1px solid transparent}
-.site-header.transparent{background:transparent;border-color:transparent}
-.site-header.scrolled{background:#fff;box-shadow:0 8px 24px rgba(2,6,23,.06);border-color:var(--line)}
-.logo-img{height:120px;width:auto;transition:height .2s, opacity .2s}
-.site-header.scrolled .logo-img{height:80px}
-.logo-dark{display:none}
-.site-header.scrolled .logo-dark{display:block}
-.site-header.scrolled .logo-light{display:none}
-.site-header.transparent .nav-link{color:#fff}
-.site-header.transparent .nav-link:hover{color:#e5e7eb}
-.site-header.scrolled .nav-link{color:#0b1220}
-.site-header.scrolled .nav-link:hover{color:#000}
-.nav-link.active{font-weight:700;border-bottom:2px solid currentColor;padding-bottom:.25rem}
-
-/* CTA in header */
-.btn-cta{padding:.55rem 1rem;border-radius:.65rem;font-weight:600;background:var(--accent);color:#fff;box-shadow:0 8px 16px rgba(47,125,233,.25)}
-.btn-cta:hover{filter:brightness(.92)}
-
-/* Simple fade-up */
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.fade-in-up{opacity:0;animation:fadeUp .7s ease-out forwards}
-.delay-1{animation-delay:.15s}.delay-2{animation-delay:.3s}
-
-/* Footer base */
-footer{background:var(--footer);color:#cbd5e1}
-footer a{color:#fff}
-footer a:hover{opacity:.9}
-
-/* Header default (overlay style) */
-.site-header {
+/* =========================================================
+   HEADER (simple + reliable)
+   - fixed overlay
+   - thinner when scrolled
+   - logo swap
+   ========================================================= */
+.site-header{
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  z-index: 100;
   background: transparent;
-  padding: 20px 0;
+  border-bottom: 1px solid transparent;
+  transition: background .25s, box-shadow .25s, padding .25s;
+  padding: 8px 0;                 /* slim header */
 }
-.site-header .logo-light { display: block; height: 120px; }
-.site-header .logo-dark { display: none; }
-
-/* When scrolled */
-.site-header.scrolled {
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 10px 0;
-}
-.site-header.scrolled .logo-light { display: none; }
-.site-header.scrolled .logo-dark { display: block; height: 80px; }
-
-/* Nav link styling */
-.nav-link {
-  color: white;
-  font-weight: 600;
-  transition: color .3s;
-}
-.site-header.scrolled .nav-link {
-  color: black;
+.site-header .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 
+.site-header.scrolled{
+  background:#fff;
+  border-color: var(--line);
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  padding: 6px 0;                  /* slightly thinner on scroll */
+}
+
+/* Header brand: allow the logo to overflow the slim header without changing layout */
+.header-brand{ position:relative; height:80px; overflow:visible; }
+/* Header logo: positioned inside header but kept visible. Uses transform scale on scroll for smooth shrinking. */
+.header-logo{
+  position:absolute;
+  left:16px; /* keep visible, near left edge */
+  top:50%;
+  transform:translateY(-50%) scale(1);
+  transform-origin: left center;
+  /* default and scrolled sizes controlled via variables */
+  max-height:var(--header-logo-default,340px); height:auto; width:auto; object-fit:contain; display:block;
+  transition:transform .18s ease, max-height .18s ease;
+  z-index:110;
+}
+.site-header.scrolled .header-logo{ transform:translateY(-50%) scale(1); max-height:var(--header-logo-scrolled,48px); }
+
+/* Inline fallback header logo (visible, independent of overflow logo) */
+.header-logo-inline{ display:block; max-height:var(--header-logo-max,260px); height:auto; width:auto; object-fit:contain; transform-origin:left center; transition:transform .18s ease, max-height .18s ease; }
+/* When header is scrolled we force the logo to fit inside the slim white banner */
+.site-header.scrolled .header-logo-inline{ transform:translateY(0) scale(1); max-height:var(--header-logo-scrolled,48px); }
+.header-logo-inline{ display:block; /* larger default logo */ max-height:var(--header-logo-default,360px); height:auto; width:auto; object-fit:contain; transform-origin:left center; transition:transform .18s ease, max-height .18s ease; transform:translateY(-6px); }
+/* On scroll keep the logo size at the default (no shrink) and align it to the header bar */
+.site-header.scrolled .header-logo-inline{ transform:translateY(-6px) scale(1); max-height:var(--header-logo-default,360px); }
+.inline-logo{ display:inline-block; margin-left:12px; }
+
+/* Logo sizes – match footer sizes; use max-height to preserve aspect ratio */
+.logo-img{ max-height:340px; height:auto; width:auto; display:block; transition:max-height .25s; }
+.site-header.scrolled .logo-img{ max-height:170px; }
+
+/* Light/Dark logo swap */
+.logo-dark{ display:none; }
+.site-header.scrolled .logo-light{ display:none; }
+.site-header.scrolled .logo-dark{ display:inline-block; }
+
+/* Nav links */
+.site-header nav{ display:flex; align-items:center; gap: 48px; flex-wrap:nowrap; }
+.nav-link{ font-weight:700; text-decoration:none; transition:color .2s; }
+.site-header .nav-link{ color:#fff; }
+.site-header .nav-link:hover{ color:#e5e7eb; }
+.site-header.scrolled .nav-link{ color:#000; }
+
+/* Active underline helper (optional) */
+.nav-link.active{ border-bottom:2px solid currentColor; padding-bottom:.25rem; }
+
+/* =========================================================
+   FOOTER (black with muted copyright)
+   ========================================================= */
+.site-footer{ background: var(--footer); color: #e5e7eb; }
+.site-footer a{ color:#fff; text-decoration:none; }
+.site-footer a:hover{ opacity:.9; }
+
+.footer-top{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr 1fr;   /* logo / office / contact */
+  gap: clamp(16px, 3vw, 48px);
+  padding: clamp(24px, 5vw, 56px) 0;
+  /* keep footer section height stable while allowing logo to overflow */
+  align-items:end; /* align content to the bottom so text lines up with logo base */
+}
+.footer-brand{ position:relative; height:120px; overflow:visible; }
+.footer-logo{ position:absolute; left:-80px; top:50%; transform:translateY(-50%); max-height:340px; height:auto; width:auto; object-fit:contain; display:block; }
+.footer-heading{ font-weight:700; margin:0 0 .5rem 0; color:#fff; }
+.footer-bottom{
+  border-top: 1px solid var(--line-dark);
+  padding: 14px 0;
+  color:#94a3b8;     /* muted */
+  font-size:.95rem;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1024px){
+  .site-header nav{ gap: 28px; }
+  .logo-img{ max-height:240px; }
+  .site-header.scrolled .logo-img{ max-height:120px; }
+  /* scrolled header logo size on tablet */
+  .site-header.scrolled{ --header-logo-scrolled:44px; }
+  /* reduce footer logo on tablet */
+  .footer-brand{ height:100px; }
+  .footer-logo{ max-height:240px; height:auto; left:-48px; top:50%; transform:translateY(-50%); }
+  .footer-top{ grid-template-columns: 1fr; }
+}
+@media (max-width: 640px){
+  .site-header nav{ gap: 20px; }
+  .logo-img{ max-height:160px; }
+  .site-header.scrolled .logo-img{ max-height:80px; }
+  /* mobile footer logo size */
+  .footer-brand{ height:80px; }
+  .footer-logo{ max-height:160px; height:auto; left:-24px; top:50%; transform:translateY(-50%); }
+  /* scrolled header logo size on mobile */
+  .site-header.scrolled{ --header-logo-scrolled:40px; }
+}

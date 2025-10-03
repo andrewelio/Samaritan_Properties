@@ -1,36 +1,27 @@
-<!-- FOOTER -->
-<footer class="py-12">
-  <div class="container grid md:grid-cols-3 gap-8">
-    
-    <!-- Left: Logo -->
-    <div>
-      <img src="assets/img/logo-light.png" alt="Samaritan Properties Logo" class="h-14 mb-4">
-      <p class="text-sm">© 2025 Samaritan Properties. All rights reserved.</p>
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <!-- Use the light/white version of your logo on black. -->
+      <img src="assets/img/logo-light.png" alt="Samaritan Properties" class="footer-logo">
+      <!-- If you don't have a white logo, use this instead:
+      <img src="assets/img/logo-dark.png" alt="Samaritan Properties" class="footer-logo invert">
+      -->
     </div>
 
-    <!-- Middle: Office -->
     <div>
-      <h3 class="font-semibold mb-2">Office</h3>
+      <h3 class="footer-heading">Office</h3>
       <p>225 W Gerri Ln<br>Addison, IL 60101</p>
     </div>
 
-    <!-- Right: Contact -->
     <div>
-      <h3 class="font-semibold mb-2">Contact</h3>
-      <p>+1 (630) 360-8650<br>
-      info@samaritan-properties.com</p>
+      <h3 class="footer-heading">Contact</h3>
+      <p>+1 (630) 360-8650<br>info@samaritan-properties.com</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2025 Samaritan Properties. All rights reserved.</p>
     </div>
   </div>
 </footer>
-
-<!-- SCROLL SCRIPT -->
-<script>
-  window.addEventListener("scroll", function() {
-    const header = document.querySelector(".site-header");
-    if (window.scrollY > 50) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
-  });
-</script>
